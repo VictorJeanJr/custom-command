@@ -59,24 +59,24 @@ public class CE implements CommandExecutor {
 
     private String[] helper(Collection<DataAnnotation.Arg> args) {
         Collection<String> collection = new ArrayList<>();
-        collection.add("§7--------------| Comandos |-----------------");
+        collection.add(" §6§lCOMANDOS");
         collection.add(" ");
         if(args.size() > 6) {
             args.forEach(e -> {
-                collection.add(String.format("§7  §o/%s %s", e.getAnnotationCommand().getCommand(),
+                collection.add(String.format("§a  §o/%s %s", e.getAnnotationCommand().getCommand(),
                         e.getAnnotationCommand().hasDescription() ?
-                                "§r§8⇢ §n" + e.getAnnotationCommand().getDescription() : ""));
+                                "§r§f⇢ §n" + e.getAnnotationCommand().getDescription() : ""));
                 collection.add(" ");
             });
         } else {
             args.forEach(e -> {
-                collection.add("§7  §o/" + e.getAnnotationCommand().getCommand());
+                collection.add("§a  §o/" + e.getAnnotationCommand().getCommand());
                 if(e.getAnnotationCommand().hasDescription())
-                    collection.add("§8   §l↪ §8§n" + e.getAnnotationCommand().getDescription());
+                    collection.add("§f  §l↪ §8§n" + e.getAnnotationCommand().getDescription());
                 collection.add(" ");
             });
         }
-        collection.add("§7------------------------------------------");
+        collection.add(" ");
         return collection.toArray(new String[0]);
     }
 
